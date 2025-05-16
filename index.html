@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menús | Restaurante Delicioso</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+    }
+    .hero {
+      background: url('img/portada-menu.jpg') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 5px #000;
+    }
+    .menu-card {
+      transition: transform 0.3s;
+    }
+    .menu-card:hover {
+      transform: scale(1.03);
+    }
+    footer {
+      background-color: #2f2f2f;
+      color: #fff;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado principal -->
+  <header class="hero text-center">
+    <div>
+      <h1 class="display-4 fw-bold">Restaurante Delicioso</h1>
+      <p class="lead">Descubre nuestros menús caseros y sabrosos</p>
+      <a href="#menu" class="btn btn-warning mt-3">Ver Menús</a>
+    </div>
+  </header>
+
+  <!-- Sección de menús -->
+  <section id="menu" class="container py-5">
+    <h2 class="text-center mb-4">Menús del Día</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card menu-card shadow-sm">
+          <img src="img/menu1.jpg" class="card-img-top" alt="Menú 1">
+          <div class="card-body">
+            <h5 class="card-title">Menú Tradicional</h5>
+            <p class="card-text">Entrada + Plato de fondo + Jugo natural.</p>
+            <p class="text-primary fw-bold">$6.000</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card menu-card shadow-sm">
+          <img src="img/menu2.jpg" class="card-img-top" alt="Menú 2">
+          <div class="card-body">
+            <h5 class="card-title">Menú Vegetariano</h5>
+            <p class="card-text">Ensalada + Quiche + Postre del día.</p>
+            <p class="text-primary fw-bold">$6.500</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card menu-card shadow-sm">
+          <img src="img/menu3.jpg" class="card-img-top" alt="Menú 3">
+          <div class="card-body">
+            <h5 class="card-title">Menú Premium</h5>
+            <p class="card-text">Entrada gourmet + Fondo + Bebida + Postre.</p>
+            <p class="text-primary fw-bold">$8.500</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto y ubicación -->
+  <section class="container py-5 text-center">
+    <h3 class="mb-3">Haz tu pedido o visítanos</h3>
+    <p><i class="fas fa-map-marker-alt me-2"></i>Av. Siempre Viva 123, Santiago</p>
+    <p><i class="fas fa-phone me-2"></i>+56 9 1234 5678</p>
+    <a href="https://wa.me/56912345678" class="btn btn-success mt-2"><i class="fab fa-whatsapp me-2"></i>Pedir por WhatsApp</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div>© 2025 Restaurante Delicioso | Todos los derechos reservados</div>
+  </footer>
+
+</body>
+</html>
