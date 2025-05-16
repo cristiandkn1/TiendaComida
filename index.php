@@ -1,3 +1,9 @@
+<?php
+require_once 'conexion.php';
+$categorias = $conn->query("SELECT id, nombre FROM categoria ORDER BY nombre ASC");
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,42 +53,35 @@
     </div>
   </header>
 
-  <!-- Sección de menús -->
-  <section id="menu" class="container py-5">
-    <h2 class="text-center mb-4">Menús del Día</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card menu-card shadow-sm">
-          <img src="img/menu1.jpg" class="card-img-top" alt="Menú 1">
-          <div class="card-body">
-            <h5 class="card-title">Menú Tradicional</h5>
-            <p class="card-text">Entrada + Plato de fondo + Jugo natural.</p>
-            <p class="text-primary fw-bold">$6.000</p>
-          </div>
-        </div>
+
+<section class="container my-5">
+  <div class="bg-white border rounded-4 shadow-sm p-4">
+    <h2 class="mb-3 text-center text-primary-emphasis">Filtrar por Categoría</h2>
+    <form method="GET" class="row justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <select name="categoria" class="form-select form-select-lg border-primary-subtle" onchange="this.form.submit()">
+          <option value="">🍽️ Ver todos los menús</option>
+          <?php while ($cat = $categorias->fetch_assoc()): ?>
+            <option value="<?= $cat['id'] ?>" <?= isset($_GET['categoria']) && $_GET['categoria'] == $cat['id'] ? 'selected' : '' ?>>
+              <?= htmlspecialchars($cat['nombre']) ?>
+            </option>
+          <?php endwhile; ?>
+        </select>
       </div>
-      <div class="col-md-4">
-        <div class="card menu-card shadow-sm">
-          <img src="img/menu2.jpg" class="card-img-top" alt="Menú 2">
-          <div class="card-body">
-            <h5 class="card-title">Menú Vegetariano</h5>
-            <p class="card-text">Ensalada + Quiche + Postre del día.</p>
-            <p class="text-primary fw-bold">$6.500</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card menu-card shadow-sm">
-          <img src="img/menu3.jpg" class="card-img-top" alt="Menú 3">
-          <div class="card-body">
-            <h5 class="card-title">Menú Premium</h5>
-            <p class="card-text">Entrada gourmet + Fondo + Bebida + Postre.</p>
-            <p class="text-primary fw-bold">$8.500</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </form>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- Contacto y ubicación -->
   <section class="container py-5 text-center">
